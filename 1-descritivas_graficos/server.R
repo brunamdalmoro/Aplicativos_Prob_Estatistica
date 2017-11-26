@@ -1,6 +1,6 @@
 # ----------------------------------------
-# Nome: Descritivas
-# Autora: Bruna M Dalmoro
+# Nome: Gráficos e Descritivas
+# Autora: Bruna Martini Dalmoro
 # Agosto, 2017
 # ----------------------------------------
 
@@ -10,6 +10,7 @@ library(shinyBS)
 library(datasets)
 library(vcdExtra)
 library(e1071)
+library(shinythemes)
 
 
 # Função para selecionar variáveis 
@@ -106,7 +107,7 @@ shinyServer(function(input, output) {
                'Boxplot' = opcoes(dtset(),c("numeric","integer","double","ts")))
     })
     
-    # Mandando pro UI as opções p usuário escolher
+    # Mandando pro UI as opções para o usuário escolher
     output$selectvarx <- renderUI({
         selectInput("x.varplot", "Variável X:", varx.opcoes())
     })
@@ -321,7 +322,7 @@ shinyServer(function(input, output) {
     })
     
     
-    # EST. DESCRITIVAS ----------------------------------------------------------------------------------
+    # MEDIDAS DESCRITIVAS ----------------------------------------------------------------------------------
     # Seleciona variáveis p tabela de descritivas
     output$selectvars <- renderUI({
         nomes <- names(dtset())
