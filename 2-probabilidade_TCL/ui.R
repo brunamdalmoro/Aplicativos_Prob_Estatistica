@@ -7,20 +7,19 @@
 # Pacotes
 if (!require("ggplot2"))
     install.packages("ggplot2")
-
 if (!require("shinyBS"))
     install.packages("shinyBS")
-
 if (!require("shiny"))
     install.packages("shiny")
+if(!require("shinythemes"))
+    install.packages("shinythemes")
 
-#options(shiny.maxRequestSize=30*1024^2, shiny.sanitize.errors = TRUE)
 
 # UI
-shinyUI(fluidPage(
+shinyUI(fluidPage(theme = shinytheme("flatly"),
      navbarPage(title="TCL",
                 # APLICATIVO ---------------------------------------------------
-                tabPanel("Simulação",
+                tabPanel("Simulação", icon = icon("bar-chart-o"),
                          fluidRow(
                              column(3,
                                     wellPanel(
@@ -34,10 +33,6 @@ shinyUI(fluidPage(
                                                       "Qui-Quadrado" = "quiquadrado",
                                                       "F-Snedecor" = "dist.f")
                                                     ),
-                                        # bsTooltip("distribuicao",
-                                        #           paste0("Escolha uma distribuição de probabilidade ",
-                                        #                  "e abaixo defina seus parâmetros."),
-                                        #           "right", options = list(container = "body")),
 
                                         # Parametros
                                         h4("Parâmetros:"),
@@ -111,7 +106,7 @@ shinyUI(fluidPage(
                                         
                                         actionButton("vai.tcl", strong("Gerar amostras!"),
                                                      icon = icon("refresh"),
-                                                     style="color: #fff; background-color: #337ab7; border-color: #2e6da4")
+                                                     class = "btn btn-success")
                                         )
                                         ),
                                  
@@ -121,8 +116,8 @@ shinyUI(fluidPage(
                                         )
                              )
                          ),
-                # COMO USAR ----------------------------------------------------
-                tabPanel("Como usar",
+                # SOBRE O APP ----------------------------------------------------
+                tabPanel("Sobre o App", icon = icon("info-circle"),
                          fluidRow(
                              column(4,
                                     wellPanel(
@@ -140,18 +135,23 @@ shinyUI(fluidPage(
                                              graficamente este teorema, comparando a distribuição 
                                              de probabilidade das médias com a distribuição de 
                                              probabilidade da amostra.</em></p>"
-                                        ))),
+                                        ),
+                                        br(),
+                                        p("Código no",
+                                          a(href = "https://github.com/brunamdalmoro/Aplicativos_Prob_Estatistica/tree/master/2-probabilidade_TCL", "GitHub"),
+                                          ".")
+                                        )),
                              column(4,
                                     h2("Controles"),
                                     HTML("<p><strong><u>Distribuição de probabilidade</u>: </strong>
-                                         Neste seletorvocê pode escolher de qual distribuição de probabilidade serão geradas suas amostras,
+                                         Neste seletor você pode escolher de qual distribuição de probabilidade serão geradas amostras,
                                          ou seja, qual a distribuição de probabilidade da população;</p>
                                          <p><strong><u>Parâmetros</u>:</strong> De acordo com a distribuição de probabilidade escolhida, você 
                                          poderá definir os seus parâmetros logo abaixo, podendo também observar como os dados se comportam 
                                          conforme os parâmetros são alterados;</p>
                                          <p><strong><u>Tamanho das amostras</u>:</strong> Aqui você pode definir qual tamanho terá cada uma de suas
                                          amostras;</p>
-                                         <p><strong><u>Número de amostras</u>:</strong> E, por fim, poderá definir quantas amostras serão geradasa 
+                                         <p><strong><u>Número de amostras</u>:</strong> E, por fim, poderá definir quantas amostras serão geradas a 
                                          partir da distribuição escolhida para que sejam calculadas as médias.</p>
                                          <p> <p>Depois de definir os campos acima, clique em <strong>Gerar amostras!</strong> para que as amostras sejam
                                          sorteadas aleatoriamente eos gráficos sejam gerados.</p></p>")),
@@ -161,14 +161,14 @@ shinyUI(fluidPage(
                                          distribuição de probabilidade das amostras aleatórias geradas. É um gráfico de barras (em caso 
                                          discreto) ou histograma (em caso contínuo). <em>Por exemplo, se nos controles você definiu que: 
                                          a distribuição que a distribuição de probabilidade é uma Exponencial, o parâmetro lambda é igual 
-                                         a 2, e as amostras têm tamanho 10, o gráfico será um histograma de uma distribuição Exponencial(2) 
+                                         a 2 e as amostras têm tamanho 10, então o gráfico será um histograma de uma distribuição Exponencial(2) 
                                          com tamanho de amostra n = 10.</em></p>
                                          <p>O <strong>segundo gráfico</strong> apresenta a distribuição das médias amostrais em formato 
                                          de histograma, junto à curva da distribuição normal. <em>A distribuição das médias <u>sempre</u> 
                                          será uma distribuição normal com média igual à média das média e desvio padrão igual ao desvio 
                                          padrão das médias das amostras.</em></p>
                                          <p>Interaga com as distribuições e seus parâmetros, experimente trocar os tamanhos de amostra e 
-                                         números de amostra gerados, e observe graficamente o que acontece. <strong>Esse é o Teorema Centraldo 
+                                         números de amostra gerados, e observe graficamente o que acontece. <strong>Esse é o Teorema Central do 
                                          Limite em ação!</strong></p>"))
                              ))
                 )))

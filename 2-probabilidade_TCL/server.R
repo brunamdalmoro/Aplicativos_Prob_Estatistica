@@ -11,6 +11,7 @@ options(shiny.maxRequestSize=30*1024^2, shiny.sanitize.errors = TRUE)
 library(ggplot2)
 library(shinyBS)
 library(shiny)
+library(shinythemes)
 
 #-------------------------------------------------------------------------------
 # Shiny server -----------------------------------------------------------------
