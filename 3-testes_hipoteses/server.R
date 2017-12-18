@@ -1,6 +1,7 @@
 # ----------------------------------------
 # Nome: Teste de Hipótese
 # Autora: Bruna M Dalmoro
+# Abril, 2017
 # ----------------------------------------
 
 
@@ -10,6 +11,8 @@ options(shiny.maxRequestSize=30*1024^2)
 
 library(ggplot2)
 library(shinyBS)
+library(shiny)
+library(shinythemes)
 
 
 ######## Funções apoio ########
