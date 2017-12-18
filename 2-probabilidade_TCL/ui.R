@@ -111,6 +111,12 @@ shinyUI(fluidPage(theme = shinytheme("flatly"),
                                         ),
                                  
                                  column(9,
+                                        
+                                        #REMOVER COMPLETAMENTE OS ERROS
+                                        tags$style(type="text/css",
+                                                   ".shiny-output-error { visibility: hidden; }",
+                                                   ".shiny-output-error:before { visibility: hidden; }"),
+                                        
                                         plotOutput("plot.dist"),
                                         plotOutput("plot.media")
                                         )

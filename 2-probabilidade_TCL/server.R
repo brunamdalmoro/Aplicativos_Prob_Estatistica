@@ -6,7 +6,7 @@
 
 ####### Library and options #######
 
-options(shiny.maxRequestSize=30*1024^2, shiny.sanitize.errors = TRUE)
+options(shiny.maxRequestSize=30*1024^2)
 
 library(ggplot2)
 library(shinyBS)
