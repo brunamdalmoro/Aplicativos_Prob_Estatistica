@@ -36,38 +36,42 @@ shinyUI(
                                             conditionalPanel(
                                                 "input.dataset == 'WWWusage'",
                                                 h5(strong("Uso de Internet por Minuto")),
-                                                h6("Uma série temporal do número de usuários conectados à internet através de um servidor a cada minuto."),
+                                                h6("Uma série temporal do número de usuários conectados 
+                                                   à internet através de um servidor a cada minuto."),
                                                 h6(strong("Variáveis:")),
-                                                h6(em("time:"), "identificação dos minutos"),
-                                                h6(em("usage:"), "número de usuários conectados à internet através do servidor")
+                                                h6(em("Tempo:"), "identificação dos minutos"),
+                                                h6(em("Uso:"), "número de usuários conectados à internet através do servidor")
                                                 ),
                                             
                                             conditionalPanel(
                                                 "input.dataset == 'AirCrash'",
                                                 h5(strong("Acidentes Aéreos")),
-                                                h6("Dados de todos os acidentes de avião comerciais fatais de 1993 a 2015. Exclui aviões pequenos (menos de 6 passageiros) e aeronaves não comerciais (carga, militares, privadas)."),
+                                                h6("Dados de todos os acidentes de avião comerciais fatais 
+                                                   de 1993 a 2015. Exclui aviões pequenos (menos de 6 passageiros) 
+                                                   e aeronaves não comerciais (carga, militares, privadas)."),
                                                 h6(strong("Variáveis:")),
-                                                h6(em("Phase:"),"fase do vôo (em percurso, aterrissagem, decolagem, desconhecido)"),
-                                                h6(em("Cause:"),"causa do acidente (criminoso, erro humano, erro mecânico, clima/tempo, desconhecido)"),
-                                                h6(em("date:"),"data do acidente"),
-                                                h6(em("Fatalities:"),"número de fatalidades")
+                                                h6(em("Fase:"),"fase do vôo (em rota, aterrisando, parado, decolando, desconhecido)"),
+                                                h6(em("Causa:"),"causa do acidente (criminoso, erro humano, mecânico, clima/tempo, desconhecido)"),
+                                                h6(em("Data:"),"data do acidente"),
+                                                h6(em("Fatalidades:"),"número de fatalidades")
                                                 ),
                                             
                                             conditionalPanel(
                                                 "input.dataset == 'mtcars'",
                                                 h5(strong("Motor Trend Car Road Tests")),
-                                                h6("Dados de consumo de combustível e 10 aspectos do design e desempenho de 32 automóveis (modelos 1973-74)."),
+                                                h6("Dados de consumo de combustível e 10 aspectos do design e desempenho 
+                                                   de 32 automóveis (modelos 1973-74)."),
                                                 h6(strong("Variáveis:")),
                                                 h6(em("mpg:"),"milhas/galão"),
-                                                h6(em("cyl:"),"número de cilindros"),
-                                                h6(em("disp:"),"deslocamento (polegada cúbica)"),
-                                                h6(em("hp:"),"potência bruta"),
-                                                h6(em("drat:"),"proporção do eixo traseiro"),
-                                                h6(em("wt:"),"peso (1000 libras)"),
-                                                h6(em("qsec:"),"tempo para percorrer 1/4 de milha"),
-                                                h6(em("vs:"),"motor de combustão interna (V-engine, Straight)"),
-                                                h6(em("am:"),"câmbio (automático, manual)"),
-                                                h6(em("gear:"),"número de marchas"),
+                                                h6(em("cilindros:"),"número de cilindros"),
+                                                h6(em("desloc:"),"deslocamento (polegada cúbica)"),
+                                                h6(em("potencia:"),"potência bruta"),
+                                                h6(em("eixo:"),"proporção do eixo traseiro"),
+                                                h6(em("peso:"),"peso (1000 libras)"),
+                                                h6(em("tempo:"),"tempo para percorrer 1/4 de milha"),
+                                                h6(em("motor:"),"motor de combustão interna (V-engine, Straight)"),
+                                                h6(em("cambio:"),"câmbio (automático, manual)"),
+                                                h6(em("marchas:"),"número de marchas"),
                                                 h6(em("carb:"),"número de carburadores")
                                             ),
                                             
@@ -76,12 +80,12 @@ shinyUI(
                                                 h5(strong("Passageiros do Titanic")),
                                                 h6("Dados sobre os passageiros do Titanic, excluindo a tripulação."),
                                                 h6(strong("Variáveis:")),
-                                                h6(em("pclass:"),"classe (1ª, 2ª, 3ª)"),
-                                                h6(em("survived:"),"situação do passageiro após naufrágio (sobreviveu, morreu)"),
-                                                h6(em("sex:"),"sexo (feminino, masculino)"),
-                                                h6(em("age:"),"idade (em anos)"),
-                                                h6(em("sibsp:"),"número de irmãos ou cônjuges a bordo"),
-                                                h6(em("parch:"),"número de pais ou filhos a bordo")
+                                                h6(em("Classe:"),"classe (1ª, 2ª, 3ª)"),
+                                                h6(em("Sobreviventes:"),"situação do passageiro após naufrágio (sobreviveu, morreu)"),
+                                                h6(em("Sexo:"),"sexo (mulher, homem)"),
+                                                h6(em("Idade:"),"idade (em anos)"),
+                                                h6(em("irmconj:"),"número de irmãos ou cônjuges a bordo"),
+                                                h6(em("paisfilhos:"),"número de pais ou filhos a bordo")
                                             )
                                             )
                                         ),
@@ -129,19 +133,23 @@ shinyUI(
                                         conditionalPanel(
                                             "input.dataset == 'WWWusage'",
                                             h5("Uso de Internet por Minuto"),
-                                            h6("Uma série temporal do número de usuários conectados à internet através de um servidor a cada minuto.")
+                                            h6("Uma série temporal do número de usuários conectados 
+                                               à internet através de um servidor a cada minuto.")
                                         ),
                                         
                                         conditionalPanel(
                                             "input.dataset == 'AirCrash'",
                                             h5("Acidentes Aéreos"),
-                                            h6("Dados de todos os acidentes de avião comerciais fatais de 1993 a 2015. Exclui aviões pequenos (menos de 6 passageiros) e aeronaves não comerciais (carga, militares, privadas).")
+                                            h6("Dados de todos os acidentes de avião comerciais fatais 
+                                               de 1993 a 2015. Exclui aviões pequenos (menos de 6 passageiros)
+                                               e aeronaves não comerciais (carga, militares, privadas).")
                                         ),
                                         
                                         conditionalPanel(
                                             "input.dataset == 'mtcars'",
                                             h5("Motor Trend Car Road Tests"),
-                                            h6("Dados de consumo de combustível e 10 aspectos do design e desempenho de 32 automóveis (modelos 1973-74).")
+                                            h6("Dados de consumo de combustível e 10 aspectos do design 
+                                               e desempenho de 32 automóveis (modelos 1973-74).")
                                         ),
                                         
                                         conditionalPanel(
@@ -157,41 +165,41 @@ shinyUI(
                                         
                                         conditionalPanel(
                                             "input.dataset == 'WWWusage'",
-                                            h6(em("time:"), "identificação dos minutos"),
-                                            h6(em("usage:"), "número de usuários conectados à internet através do servidor")
+                                            h6(em("Tempo:"), "identificação dos minutos"),
+                                            h6(em("Uso:"), "número de usuários conectados à internet através do servidor")
                                         ),
                                         
                                         conditionalPanel(
                                             "input.dataset == 'AirCrash'",
-                                            h6(em("Phase:"),"fase do vôo (em percurso, aterrissagem, decolagem, desconhecido)"),
-                                            h6(em("Cause:"),"causa do acidente (criminoso, erro humano, erro mecânico, clima/tempo, desconhecido)"),
-                                            h6(em("date:"),"data do acidente"),
-                                            h6(em("Fatalities:"),"número de fatalidades")
+                                            h6(em("Fase:"),"fase do vôo (em rota, aterrisando, parado, decolando, desconhecido)"),
+                                            h6(em("Causa:"),"causa do acidente (criminoso, erro humano, mecânico, clima/tempo, desconhecido)"),
+                                            h6(em("Data:"),"data do acidente"),
+                                            h6(em("Fatalidades:"),"número de fatalidades")
                                         ),
                                         
                                         conditionalPanel(
                                             "input.dataset == 'mtcars'",
                                             h6(em("mpg:"),"milhas/galão"),
-                                            h6(em("cyl:"),"número de cilindros"),
-                                            h6(em("disp:"),"deslocamento (polegada cúbica)"),
-                                            h6(em("hp:"),"potência bruta"),
-                                            h6(em("drat:"),"proporção do eixo traseiro"),
-                                            h6(em("wt:"),"peso (1000 libras)"),
-                                            h6(em("qsec:"),"tempo para percorrer 1/4 de milha"),
-                                            h6(em("vs:"),"motor de combustão interna (V-engine, Straight)"),
-                                            h6(em("am:"),"câmbio (automático, manual)"),
-                                            h6(em("gear:"),"número de marchas"),
+                                            h6(em("cilindros:"),"número de cilindros"),
+                                            h6(em("desloc:"),"deslocamento (polegada cúbica)"),
+                                            h6(em("potencia:"),"potência bruta"),
+                                            h6(em("eixo:"),"proporção do eixo traseiro"),
+                                            h6(em("peso:"),"peso (1000 libras)"),
+                                            h6(em("tempo:"),"tempo para percorrer 1/4 de milha"),
+                                            h6(em("motor:"),"motor de combustão interna (V-engine, Straight)"),
+                                            h6(em("cambio:"),"câmbio (automático, manual)"),
+                                            h6(em("marchas:"),"número de marchas"),
                                             h6(em("carb:"),"número de carburadores")
                                         ),
                                         
                                         conditionalPanel(
                                             "input.dataset == 'Titanicp'",
-                                            h6(em("pclass:"),"classe (1ª, 2ª, 3ª)"),
-                                            h6(em("survived:"),"situação do passageiro após naufrágio (sobreviveu, morreu)"),
-                                            h6(em("sex:"),"sexo (feminino, masculino)"),
-                                            h6(em("age:"),"idade (em anos)"),
-                                            h6(em("sibsp:"),"número de irmãos ou cônjuges a bordo"),
-                                            h6(em("parch:"),"número de pais ou filhos a bordo")
+                                            h6(em("Classe:"),"classe (1ª, 2ª, 3ª)"),
+                                            h6(em("Sobreviventes:"),"situação do passageiro após naufrágio (sobreviveu, morreu)"),
+                                            h6(em("Sexo:"),"sexo (mulher, homem)"),
+                                            h6(em("Idade:"),"idade (em anos)"),
+                                            h6(em("irmconj:"),"número de irmãos ou cônjuges a bordo"),
+                                            h6(em("paisfilhos:"),"número de pais ou filhos a bordo")
                                         )
                                  )
                              )
@@ -210,19 +218,23 @@ shinyUI(
                                             conditionalPanel(
                                                 "input.dataset == 'WWWusage'",
                                                 h5("Uso de Internet por Minuto"),
-                                                h6("Uma série temporal do número de usuários conectados à internet através de um servidor a cada minuto.")
+                                                h6("Uma série temporal do número de usuários conectados à 
+                                                   internet através de um servidor a cada minuto.")
                                             ),
                                             
                                             conditionalPanel(
                                                 "input.dataset == 'AirCrash'",
                                                 h5("Acidentes Aéreos"),
-                                                h6("Dados de todos os acidentes de avião comerciais fatais de 1993 a 2015. Exclui aviões pequenos (menos de 6 passageiros) e aeronaves não comerciais (carga, militares, privadas).")
+                                                h6("Dados de todos os acidentes de avião comerciais fatais 
+                                                   de 1993 a 2015. Exclui aviões pequenos (menos de 6 passageiros) 
+                                                   e aeronaves não comerciais (carga, militares, privadas).")
                                             ),
                                             
                                             conditionalPanel(
                                                 "input.dataset == 'mtcars'",
                                                 h5("Motor Trend Car Road Tests"),
-                                                h6("Dados de consumo de combustível e 10 aspectos do design e desempenho de 32 automóveis (modelos 1973-74).")
+                                                h6("Dados de consumo de combustível e 10 aspectos do design e 
+                                                   desempenho de 32 automóveis (modelos 1973-74).")
                                             ),
                                             
                                             conditionalPanel(
@@ -235,41 +247,41 @@ shinyUI(
                                             
                                             conditionalPanel(
                                                 "input.dataset == 'WWWusage'",
-                                                h6(em("time:"), "identificação dos minutos"),
-                                                h6(em("usage:"), "número de usuários conectados à internet através do servidor")
+                                                h6(em("Tempo:"), "identificação dos minutos"),
+                                                h6(em("Uso:"), "número de usuários conectados à internet através do servidor")
                                             ),
                                             
                                             conditionalPanel(
                                                 "input.dataset == 'AirCrash'",
-                                                h6(em("Phase:"),"fase do vôo (em percurso, aterrissagem, decolagem, desconhecido)"),
-                                                h6(em("Cause:"),"causa do acidente (criminoso, erro humano, erro mecânico, clima/tempo, desconhecido)"),
-                                                h6(em("date:"),"data do acidente"),
-                                                h6(em("Fatalities:"),"número de fatalidades")
+                                                h6(em("Fase:"),"fase do vôo (em rota, aterrisando, parado, decolando, desconhecido)"),
+                                                h6(em("Causa:"),"causa do acidente (criminoso, erro humano, mecânico, clima/tempo, desconhecido)"),
+                                                h6(em("Data:"),"data do acidente"),
+                                                h6(em("Fatalidades:"),"número de fatalidades")
                                             ),
                                             
                                             conditionalPanel(
                                                 "input.dataset == 'mtcars'",
                                                 h6(em("mpg:"),"milhas/galão"),
-                                                h6(em("cyl:"),"número de cilindros"),
-                                                h6(em("disp:"),"deslocamento (polegada cúbica)"),
-                                                h6(em("hp:"),"potência bruta"),
-                                                h6(em("drat:"),"proporção do eixo traseiro"),
-                                                h6(em("wt:"),"peso (1000 libras)"),
-                                                h6(em("qsec:"),"tempo para percorrer 1/4 de milha"),
-                                                h6(em("vs:"),"motor de combustão interna (V-engine, Straight)"),
-                                                h6(em("am:"),"câmbio (automático, manual)"),
-                                                h6(em("gear:"),"número de marchas"),
+                                                h6(em("cilindros:"),"número de cilindros"),
+                                                h6(em("desloc:"),"deslocamento (polegada cúbica)"),
+                                                h6(em("potencia:"),"potência bruta"),
+                                                h6(em("eixo:"),"proporção do eixo traseiro"),
+                                                h6(em("peso:"),"peso (1000 libras)"),
+                                                h6(em("tempo:"),"tempo para percorrer 1/4 de milha"),
+                                                h6(em("motor:"),"motor de combustão interna (V-engine, Straight)"),
+                                                h6(em("cambio:"),"câmbio (automático, manual)"),
+                                                h6(em("marchas:"),"número de marchas"),
                                                 h6(em("carb:"),"número de carburadores")
                                             ),
                                             
                                             conditionalPanel(
                                                 "input.dataset == 'Titanicp'",
-                                                h6(em("pclass:"),"classe (1ª, 2ª, 3ª)"),
-                                                h6(em("survived:"),"situação do passageiro após naufrágio (sobreviveu, morreu)"),
-                                                h6(em("sex:"),"sexo (feminino, masculino)"),
-                                                h6(em("age:"),"idade (em anos)"),
-                                                h6(em("sibsp:"),"número de irmãos ou cônjuges a bordo"),
-                                                h6(em("parch:"),"número de pais ou filhos a bordo")
+                                                h6(em("Classe:"),"classe (1ª, 2ª, 3ª)"),
+                                                h6(em("Sobreviventes:"),"situação do passageiro após naufrágio (sobreviveu, morreu)"),
+                                                h6(em("Sexo:"),"sexo (mulher, homem)"),
+                                                h6(em("Idade:"),"idade (em anos)"),
+                                                h6(em("irmconj:"),"número de irmãos ou cônjuges a bordo"),
+                                                h6(em("paisfilhos:"),"número de pais ou filhos a bordo")
                                             )
                                         )
                                  ),
@@ -302,8 +314,8 @@ shinyUI(
                                                medidas descritivas."),
                                             br(),
                                             p("Código no",
-                                              a(href = "https://github.com/brunamdalmoro/Aplicativos_Prob_Estatistica/tree/master/1-descritivas_graficos", "GitHub"),
-                                              ".")
+                                              a(href = "https://github.com/brunamdalmoro/Aplicativos_Prob_Estatistica/tree/master/1-descritivas_graficos",
+                                                "GitHub"),".")
                                         )
                                  ),
                                  

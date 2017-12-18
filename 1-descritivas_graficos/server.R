@@ -40,23 +40,35 @@ shinyServer(function(input, output) {
     dtset <- reactive({
         switch(input$dataset,
                'WWWusage' = {
-                   data.frame(time=1:length(WWWusage), usage=WWWusage)
+                   ww <- data.frame(time=1:length(WWWusage), usage=WWWusage)
+                   colnames(ww) <- c("Tempo","Uso")
+                   ww
                    },
                'AirCrash' = {
                    data("AirCrash")
-                   AirCrash[,-5]
+                   ac <- AirCrash[,-5]
+                   colnames(ac) <- c("Fase","Causa","Data","Fatalidades")
+                   levels(ac$Fase) <- c("em rota","pousando","parado","decolando","desconhecido")
+                   levels(ac$Causa) <- c("criminoso","erro humano","mecânico","desconhecido","clima/tempo")
+                   ac
                    },
                'mtcars' = {
                    x <- mtcars
                    x$am <- factor(x$am)
-                   levels(x$am) <- c("Automatic", "Manual")
+                   levels(x$am) <- c("Automático", "Manual")
                    x$vs <- factor(x$vs)
                    levels(x$vs) <- c("V-engine", "Straight")
+                   colnames(x) <- c("mpg","cilindros","desloc","potencia","eixo","peso","tempo","motor",
+                                    "cambio","marchas","carb")
                    x
                    },
                'Titanicp' = {
                    data("Titanicp")
-                   Titanicp
+                   tp <- Titanicp
+                   colnames(tp) <- c("Classe","Sobreviventes","Sexo","Idade","irmconj","paisfilhos")
+                   levels(tp$Sobreviventes) <- c("morreu","sobreviveu")
+                   levels(tp$Sexo) <- c("mulher","homem")
+                   tp
                })
     })
     
